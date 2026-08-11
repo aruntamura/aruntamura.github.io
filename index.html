@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arun — Research</title>
+<style>
+  :root{
+    --text:#1a1a1a;
+    --text-dim:#555;
+    --line:#ddd;
+    --bg:#ffffff;
+    --accent:#8C1515; /* Stanford cardinal, used sparingly */
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:16px;
+    line-height:1.6;
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px 80px;
+  }
+  a{color:var(--accent);text-decoration:underline;}
+  a:hover{color:#5c0d0d;}
+
+  header{padding:40px 0 20px; border-bottom:1px solid var(--line);}
+  h1{font-size:26px; font-weight:normal; letter-spacing:0.01em;}
+  .title{color:var(--text-dim); font-size:15px; margin-top:4px; font-family:Arial, Helvetica, sans-serif;}
+
+  nav{
+    display:flex; gap:0; margin-top:22px; flex-wrap:wrap;
+    font-family:Arial, Helvetica, sans-serif; font-size:14px;
+    border-top:1px solid var(--line);
+  }
+  nav button{
+    background:none; border:none; cursor:pointer;
+    padding:10px 16px 10px 0;
+    margin-right:10px;
+    color:var(--text-dim);
+    font-family:inherit; font-size:14px;
+    border-bottom:2px solid transparent;
+  }
+  nav button.active{
+    color:var(--text);
+    border-bottom:2px solid var(--accent);
+    font-weight:bold;
+  }
+  nav button:hover{color:var(--text);}
+
+  .panel{display:none; padding-top:30px;}
+  .panel.active{display:block;}
+
+  h2{font-size:19px; font-weight:bold; margin-bottom:14px; font-family:Arial, Helvetica, sans-serif;}
+  h3{font-size:16px; font-weight:bold; margin-bottom:4px;}
+
+  p{margin-bottom:14px;}
+
+  .contact-line{font-family:Arial, Helvetica, sans-serif; font-size:14px; color:var(--text-dim); margin-top:16px;}
+  .contact-line a{margin-right:14px;}
+
+  .entry{padding:16px 0; border-bottom:1px solid var(--line);}
+  .entry:first-child{padding-top:0;}
+  .entry:last-child{border-bottom:none;}
+  .entry-meta{font-family:Arial, Helvetica, sans-serif; font-size:13px; color:var(--text-dim); margin-bottom:6px;}
+  .entry-links{font-family:Arial, Helvetica, sans-serif; font-size:13px; margin-top:6px;}
+  .entry-links a{margin-right:14px;}
+  .status{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:var(--text-dim); font-style:italic;}
+
+  ul{margin:0 0 14px 20px;}
+  li{margin-bottom:6px;}
+
+  .poster-item{padding:14px 0; border-bottom:1px solid var(--line);}
+  .poster-item:last-child{border-bottom:none;}
+  .poster-placeholder{
+    width:100%; max-width:280px; height:150px;
+    border:1px dashed #bbb; display:flex; align-items:center; justify-content:center;
+    color:#999; font-family:Arial, Helvetica, sans-serif; font-size:12px; margin-bottom:8px;
+  }
+
+  /* --- Blog: week/date log, plain --- */
+  .week-heading{
+    font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
+    margin:26px 0 10px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  .week-heading:first-child{border-top:none; margin-top:0; padding-top:0;}
+  .log-date{font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+  .log-entry{margin-bottom:14px;}
+  .log-entry p{display:inline; margin:0;}
+
+  footer{
+    margin-top:50px; padding-top:16px; border-top:1px solid var(--line);
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:var(--text-dim);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Arun Tamura</h1>
+  <div class="title">Electrical Engineering, Stanford University</div>
+  <div class="contact-line">
+    <a href="mailto:atamura@stanford.edu">Email</a>
+    <a href="#" target="_blank">LinkedIn</a>
+    <a href="https://arbabianlab.stanford.edu/" target="_blank">Arbabian Lab</a>
+  </div>
+  <nav id="nav">
+    <button class="tab-btn active" data-tab="home">Home</button>
+    <button class="tab-btn" data-tab="papers">Papers</button>
+    <button class="tab-btn" data-tab="projects">Projects</button>
+    <button class="tab-btn" data-tab="posters">Posters</button>
+    <button class="tab-btn" data-tab="blog">Blog</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HOME ============ -->
+  <section class="panel active" id="panel-home">
+    <h2>About</h2>
+    <p>
+      I'm an electrical engineering student at Stanford, currently working in the
+      <a href="https://arbabianlab.stanford.edu/" target="_blank">Arbabian Lab</a> building a
+      synchronized, single-computer ROS2 capture system that combines four Orbbec Femto Mega RGB-D cameras,
+      a TI IWR6843ISK mmWave radar, and a Bosch SR250/STM32 UWB radar into one time-aligned rosbag pipeline
+      for gait research. My work spans the full stack, from board-level firmware and network infrastructure
+      to the synchronization architecture that keeps every sensor aligned to a shared clock.
+    </p>
+    <p>
+      I'm broadly interested in RF sensing, multimodal perception, and the systems-level work that makes
+      sensor fusion reliable in practice. I'm currently looking for Bay Area EE-focused internships for
+      Summer 2027.
+    </p>
+
+    <h2 style="margin-top:26px;">Research Interests</h2>
+    <ul>
+      <li><strong>RF &amp; radar sensing</strong> — FMCW mmWave radar signal processing, UWB ranging, and RF as a privacy-preserving alternative to vision-based sensing.</li>
+      <li><strong>Multimodal sensor fusion</strong> — time-synchronizing heterogeneous sensors (cameras, radar, UWB) into a single coherent capture pipeline.</li>
+      <li><strong>Systems &amp; infrastructure</strong> — ROS2 architecture, embedded firmware (STM32), and the networking/hardware layer sensing systems run on.</li>
+      <li><strong>Gait &amp; biomechanics</strong> — using synchronized sensor data to characterize normal and abnormal gait patterns for clinical and robotics applications.</li>
+    </ul>
+
+  </section>
+
+  <!-- ============ PAPERS ============ -->
+  <section class="panel" id="panel-papers">
+    <h2>Papers</h2>
+
+    <div class="entry">
+      <h3>Multimodal Data Collection, and Waveform Optimization for Radar-Based Human Activity Monitoring</h3>
+      <div class="entry-meta"><a href="https://arbabianlab.stanford.edu/" target="_blank">Arbabian Lab</a>, Stanford University · Arun Tamura · <span class="status">Quarterly report</span></div>
+      <p>
+        Summarizes a quarter of work onboarding to a multimodal radar sensing system and optimizing an FMCW
+        waveform for healthcare-oriented human activity monitoring. Includes hands-on capture sessions at the
+        Living Lab (sit-to-stand, freezing/shuffling gait, falls, and mixed-activity sequences) and a full
+        redesign of the indoor radar waveform, evaluated against the prior outdoor-tuned waveform through
+        corner reflector tests, sky tests, and micro-Doppler motion comparisons.
+      </p>
+      <div class="entry-links"><a href="Multimodal%20Data%20Collection,%20and%20Waveform%20Optimization%20for%20Radar-Based%20Human%20Activity%20Monitoring.pdf">PDF</a></div>
+    </div>
+
+    <div class="entry">
+      <h3>[Working Title — Multimodal RF/RGB-D Gait Capture System]</h3>
+      <div class="entry-meta">In preparation · Expected [Year] · <span class="status">In progress</span></div>
+      <p>
+        Follow-up to the paper above, describing the synchronized four-camera + mmWave + UWB capture
+        platform and the dataset it produces.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="panel" id="panel-projects">
+    <h2>Projects</h2>
+
+    <div class="entry">
+      <h3>Multimodal RF + RGB-D Gait Capture Platform</h3>
+      <div class="entry-meta">ROS2, Python/C++ · TI IWR6843ISK, Orbbec Femto Mega, STM32 · <span class="status">Active</span></div>
+      <p>
+        A single-computer ROS2 system synchronizing four Orbbec Femto Mega RGB-D cameras, a TI IWR6843ISK
+        mmWave radar, and a Bosch SR250/STM32 UWB radar into one time-aligned rosbag recording pipeline.
+        Built the capture-gate synchronization architecture, diagnosed cross-subsystem frame loss (network,
+        CPU, disk), and configured the dual-subnet sensor network (PoE camera/UWB switch plus a direct
+        USB-Ethernet mmWave link). This is the active continuation of the work behind my earlier paper,
+        extended to full multimodal, multi-camera synchronization.
+      </p>
+      <div class="entry-links"><a href="#">Repository (private)</a></div>
+    </div>
+
+    <div class="entry">
+      <h3>Autonomous Mechatronic Balancer</h3>
+      <div class="entry-meta">Python, Computer Vision, Servo Control · Mentor: Wei Cai · Jun 2025 – Sep 2025</div>
+      <p>
+        A closed-loop control system combining a CMOS camera and servo actuator to stabilize a ping-pong ball
+        on a pivoting lever arm in real time. Built a real-time Python computer vision/ML pipeline to track
+        ball position frame-by-frame and minimize control loop latency, with hardware-in-the-loop testing and
+        iterative calibration validated through weekly quantitative performance reports.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ POSTERS ============ -->
+  <section class="panel" id="panel-posters">
+    <h2>Posters</h2>
+
+    <div class="poster-item">
+      <div class="poster-placeholder">Poster image</div>
+      <h3>[Poster Title]</h3>
+      <div class="entry-meta">[Conference / Symposium], [Year]</div>
+    </div>
+
+    <div class="poster-item">
+      <div class="poster-placeholder">Poster image</div>
+      <h3>[Poster Title]</h3>
+      <div class="entry-meta">[Conference / Symposium], [Year]</div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG ============ -->
+  <section class="panel" id="panel-blog">
+    <h2>Research Log</h2>
+
+    <div class="week-heading">Week of August 4, 2026</div>
+    <div class="log-entry">
+      <span class="log-date">August 8:</span>
+      <p>Continuing to isolate whether depth frame drops (10–29%, asymmetric across the four cameras)
+      originate from network saturation, CPU scheduling, or disk write contention. A hardware crash on the
+      PCIe/Thunderbolt link interrupted the isolation test mid-run — re-running now to confirm the root
+      cause before touching the capture-gate synchronization logic.</p>
+    </div>
+
+    <div class="week-heading">Week of July 28, 2026</div>
+    <div class="log-entry">
+      <span class="log-date">July 30:</span>
+      <p>Confirmed the ~7% frame loss on the UWB radar (SR250/STM32) is real and not a logging artifact.
+      Deciding whether to compensate for it in software or address it at the firmware/serial layer.</p>
+    </div>
+    <div class="log-entry">
+      <span class="log-date">July 28:</span>
+      <p>Started drafting slides and diagrams to summarize system progress for my PI, focusing on the
+      synchronization architecture and the current frame-loss numbers.</p>
+    </div>
+
+    <div class="week-heading">Week of June 23, 2026</div>
+    <div class="log-entry">
+      <span class="log-date">June 25:</span>
+      <p>Stood up the dual-subnet sensor network: cameras and UWB on a PoE switch, mmWave radar on a
+      direct USB-Ethernet link, to isolate bandwidth-sensitive camera traffic from the radar connection.
+      Resolved IP conflicts on the Orbbec cameras and got every sensor reachable from a single capture host.</p>
+    </div>
+
+    <div class="week-heading">[Month, Year]</div>
+    <div class="log-entry">
+      <span class="log-date">[Date]:</span>
+      <p>[Add your next update here — replace this placeholder as the project progresses.]</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Last updated August 2026.
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+
+  function activateTab(tabName, scroll){
+    const btn = document.querySelector('.tab-btn[data-tab="'+tabName+'"]');
+    if(!btn) return;
+    tabs.forEach(t=>t.classList.remove('active'));
+    panels.forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-'+tabName).classList.add('active');
+    if(scroll) window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  tabs.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      history.replaceState(null, '', '#'+btn.dataset.tab);
+      activateTab(btn.dataset.tab, true);
+    });
+  });
+
+  // Open directly to a tab if the URL has a hash, e.g. yoursite.com/#blog
+  const initialTab = window.location.hash.replace('#','');
+  if(initialTab && document.getElementById('panel-'+initialTab)){
+    activateTab(initialTab, false);
+  }
+</script>
+
+</body>
+</html>
