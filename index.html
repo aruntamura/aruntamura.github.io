@@ -80,6 +80,12 @@
     color:#999; font-family:Arial, Helvetica, sans-serif; font-size:12px; margin-bottom:8px;
   }
 
+  .under-construction{
+    border:1px dashed #bbb; border-radius:4px;
+    padding:28px 16px; text-align:center;
+    color:#999; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-style:italic;
+  }
+
   /* --- Blog: week/date log, plain --- */
   .week-heading{
     font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
@@ -149,7 +155,7 @@
     <h2>Papers</h2>
 
     <div class="entry">
-      <h3>Multimodal Data Collection, and Waveform Optimization for Radar-Based Human Activity Monitoring</h3>
+      <h3>Multimodal Data Collection and Waveform Optimization for Radar-Based Human Activity Monitoring</h3>
       <div class="entry-meta"><a href="https://arbabianlab.stanford.edu/" target="_blank">Arbabian Lab</a>, Stanford University · Arun Tamura · <span class="status">Quarterly report</span></div>
       <p>
         Summarizes a quarter of work onboarding to a multimodal radar sensing system and optimizing an FMCW
@@ -163,11 +169,8 @@
 
     <div class="entry">
       <h3>[Working Title — Multimodal RF/RGB-D Gait Capture System]</h3>
-      <div class="entry-meta">In preparation · Expected [Year] · <span class="status">In progress</span></div>
-      <p>
-        Follow-up to the paper above, describing the synchronized four-camera + mmWave + UWB capture
-        platform and the dataset it produces.
-      </p>
+      <div class="entry-meta">In preparation · Expected 2026</div>
+      <div class="under-construction">Under construction — check back soon.</div>
     </div>
   </section>
 
@@ -205,63 +208,20 @@
   <section class="panel" id="panel-posters">
     <h2>Posters</h2>
 
-    <div class="poster-item">
-      <div class="poster-placeholder">Poster image</div>
-      <h3>[Poster Title]</h3>
-      <div class="entry-meta">[Conference / Symposium], [Year]</div>
-    </div>
-
-    <div class="poster-item">
-      <div class="poster-placeholder">Poster image</div>
-      <h3>[Poster Title]</h3>
-      <div class="entry-meta">[Conference / Symposium], [Year]</div>
-    </div>
+    <div class="under-construction">Under construction — check back soon.</div>
   </section>
 
   <!-- ============ BLOG ============ -->
   <section class="panel" id="panel-blog">
     <h2>Research Log</h2>
 
-    <div class="week-heading">Week of August 4, 2026</div>
-    <div class="log-entry">
-      <span class="log-date">August 8:</span>
-      <p>Continuing to isolate whether depth frame drops (10–29%, asymmetric across the four cameras)
-      originate from network saturation, CPU scheduling, or disk write contention. A hardware crash on the
-      PCIe/Thunderbolt link interrupted the isolation test mid-run — re-running now to confirm the root
-      cause before touching the capture-gate synchronization logic.</p>
-    </div>
-
-    <div class="week-heading">Week of July 28, 2026</div>
-    <div class="log-entry">
-      <span class="log-date">July 30:</span>
-      <p>Confirmed the ~7% frame loss on the UWB radar (SR250/STM32) is real and not a logging artifact.
-      Deciding whether to compensate for it in software or address it at the firmware/serial layer.</p>
-    </div>
-    <div class="log-entry">
-      <span class="log-date">July 28:</span>
-      <p>Started drafting slides and diagrams to summarize system progress for my PI, focusing on the
-      synchronization architecture and the current frame-loss numbers.</p>
-    </div>
-
-    <div class="week-heading">Week of June 23, 2026</div>
-    <div class="log-entry">
-      <span class="log-date">June 25:</span>
-      <p>Stood up the dual-subnet sensor network: cameras and UWB on a PoE switch, mmWave radar on a
-      direct USB-Ethernet link, to isolate bandwidth-sensitive camera traffic from the radar connection.
-      Resolved IP conflicts on the Orbbec cameras and got every sensor reachable from a single capture host.</p>
-    </div>
-
-    <div class="week-heading">[Month, Year]</div>
-    <div class="log-entry">
-      <span class="log-date">[Date]:</span>
-      <p>[Add your next update here — replace this placeholder as the project progresses.]</p>
-    </div>
+    <div class="under-construction">Under construction — check back soon.</div>
   </section>
 
 </main>
 
 <footer>
-  Last updated August 2026.
+  Last updated August 12, 2026.
 </footer>
 
 <script>
