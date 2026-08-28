@@ -79,6 +79,16 @@
     border:1px dashed #bbb; display:flex; align-items:center; justify-content:center;
     color:#999; font-family:Arial, Helvetica, sans-serif; font-size:12px; margin-bottom:8px;
   }
+  .poster-preview{
+    display:block; width:100%; max-width:100%; height:auto;
+    border:1px solid var(--line); margin-bottom:8px;
+  }
+  .media-placeholder{
+    width:100%; max-width:420px; height:220px;
+    border:1px dashed #bbb; display:flex; align-items:center; justify-content:center;
+    color:#999; font-family:Arial, Helvetica, sans-serif; font-size:12px;
+    text-align:center; padding:12px; margin:10px 0;
+  }
 
   .under-construction{
     border:1px dashed #bbb; border-radius:4px;
@@ -201,6 +211,9 @@
         ball position frame-by-frame and minimize control loop latency, with hardware-in-the-loop testing and
         iterative calibration validated through weekly quantitative performance reports.
       </p>
+      <video class="poster-preview" autoplay loop muted playsinline>
+        <source src="ping-pong-balancer.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
@@ -211,7 +224,10 @@
     <div class="poster-item">
       <h3>A Unified Multimodal System for Human Motion Capture</h3>
       <div class="entry-meta"><a href="https://arbabianlab.stanford.edu/" target="_blank">Arbabian Lab</a>, Stanford University · Arun Tamura · <span class="status">REU Poster, Summer 2026</span></div>
-      <div class="entry-links"><a href="arun-tamura-reu-poster.pdf">PDF</a></div>
+      <a href="arun-tamura-reu-poster.pdf" target="_blank">
+        <img class="poster-preview" src="poster-preview.jpg" alt="A Unified Multimodal System for Human Motion Capture — REU poster preview">
+      </a>
+      <div class="entry-links"><a href="arun-tamura-reu-poster.pdf" target="_blank">Open full-size PDF</a></div>
     </div>
   </section>
 
@@ -225,7 +241,7 @@
 </main>
 
 <footer>
-  Last updated August 12, 2026.
+  Last updated August 28, 2026.
 </footer>
 
 <script>
