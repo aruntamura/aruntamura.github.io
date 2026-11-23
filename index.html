@@ -145,16 +145,28 @@
       to the synchronization architecture that keeps every sensor aligned to a shared clock.
     </p>
     <p>
-      I'm broadly interested in RF sensing, multimodal perception, and the systems-level work that makes
-      sensor fusion reliable in practice. I'm currently looking for Bay Area EE-focused internships for
-      Summer 2027.
+      I also build robots. In Stanford's CS 123 (AI-Enabled Robots) I worked a Pupper quadruped up from PD
+      joint torque control through forward and inverse kinematics to a trotting gait, then replaced that
+      hand-tuned gait with a walking policy trained by reinforcement learning in simulation and deployed
+      onto the same hardware. Most recently I wrote the tool and prompt layer that lets a foundation model
+      drive the robot, where the hard part is not the motion but making sure the model can only find out
+      what actually happened through a channel that cannot lie to it.
+    </p>
+    <p>
+      Sensing and robotics are the same question for me: how do you get a system's picture of the world to
+      match the world, and how do you know when it does not. I'm broadly interested in RF sensing,
+      multimodal perception, robot control, and the systems-level work that makes any of it reliable
+      outside a demo. I'm currently looking for Bay Area internships for Summer 2027, in EE hardware or
+      robotics.
     </p>
 
     <h2 style="margin-top:26px;">Research Interests</h2>
     <ul>
+      <li><strong>Robotics &amp; control</strong> — legged locomotion, kinematics and gait generation, reinforcement learning for control, and sim-to-real transfer onto real hardware.</li>
+      <li><strong>Embodied AI</strong> — giving foundation models a body: grounded tool interfaces, validation before a command reaches the motors, and honest reporting of robot state.</li>
       <li><strong>RF &amp; radar sensing</strong> — FMCW mmWave radar signal processing, UWB ranging, and RF as a privacy-preserving alternative to vision-based sensing.</li>
       <li><strong>Multimodal sensor fusion</strong> — time-synchronizing heterogeneous sensors (cameras, radar, UWB) into a single coherent capture pipeline.</li>
-      <li><strong>Systems &amp; infrastructure</strong> — ROS2 architecture, embedded firmware (STM32), and the networking/hardware layer sensing systems run on.</li>
+      <li><strong>Systems &amp; infrastructure</strong> — ROS2 architecture, embedded firmware (STM32), real-time control loops, and the networking/hardware layer sensing systems run on.</li>
       <li><strong>Gait &amp; biomechanics</strong> — using synchronized sensor data to characterize normal and abnormal gait patterns for clinical and robotics applications.</li>
     </ul>
 
