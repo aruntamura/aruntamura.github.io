@@ -203,6 +203,42 @@
     </div>
 
     <div class="entry">
+      <h3>Pupper: Quadruped Control Stack, Learned Gaits, and a Voice-Driven Agent</h3>
+      <div class="entry-meta">Stanford CS 123, AI-Enabled Robots &middot; Python, ROS2, MuJoCo/mjlab, Raspberry Pi 5, Hailo accelerator &middot; Fall 2026 &middot; <span class="status">Active</span></div>
+      <p>
+        Built the control stack for a Pupper quadruped from the joints up. It starts with PD torque control
+        on a single leg joint over ROS2. Above that sits forward kinematics, written as per-leg transformation
+        matrices, and an inverse kinematics solver that runs gradient descent on that forward model to turn a
+        desired foot position into joint angles. Then swing trajectory generation and a trotting gait, tuned
+        by hand through timer frequency, stride length and stance position until the robot could cover a
+        ten-foot course instead of falling over halfway down it.
+      </p>
+      <p>
+        The next stage replaced the hand-tuned gait with a learned one. I trained a velocity-tracking
+        walking policy with reinforcement learning in mjlab, a MuJoCo-based environment, using domain
+        randomization so the policy would survive the move onto real hardware, then pulled the trained
+        checkpoint from Weights and Biases down onto the robot. Building both controllers for the same
+        chassis is the useful part. The comparison shows where a model of a robot stops predicting the robot.
+        Perception runs on-device in the same loop: a YOLOv8n-seg segmentation model on a Hailo accelerator
+        drives a proportional person-following controller at 10 Hz, with range estimated from the bottom
+        edge of the bounding box since the camera carries no depth sensor.
+      </p>
+      <p>
+        The current lab puts a foundation model in charge. Gemini Live hears the person, sees through the
+        camera and decides what to do, while the gait controllers and trained policies remain the only
+        things that actually move. I wrote the layer between them: the motion tools the model can call
+        (straight moves, turns in place, arcs), the validation that rejects a command before it reaches the
+        motors if it breaks a speed, duration or distance limit, the follow-mode rule, and trick playback.
+        I also wrote the system prompt that governs how the model is allowed to report what happened. That
+        part mattered more than I expected. A language model will happily announce that it is walking when
+        the queue actually refused the command, so the rules have to be explicit: call the tool before
+        talking, treat a queued reply as waiting rather than finished, never claim a motion the robot did
+        not accept, and read the robot's real status instead of guessing. Giving a model a body turns out to
+        be mostly an exercise in making sure the only channel it learns through cannot lie to it.
+      </p>
+    </div>
+
+    <div class="entry">
       <h3>Autonomous Mechatronic Balancer</h3>
       <div class="entry-meta">Python, Computer Vision, Servo Control · Mentor: Wei Cai · Jun 2025 – Sep 2025</div>
       <p>
@@ -241,7 +277,7 @@
 </main>
 
 <footer>
-  Last updated August 28, 2026.
+  Last updated November 23, 2026.
 </footer>
 
 <script>
