@@ -83,6 +83,13 @@
     display:block; width:100%; max-width:100%; height:auto;
     border:1px solid var(--line); margin-bottom:8px;
   }
+  .video-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:12px;}
+  .clip{margin:0; flex:1 1 230px; max-width:300px;}
+  .clip video{display:block; width:100%; height:auto; border:1px solid var(--line); background:#000;}
+  .clip figcaption{
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:var(--text-dim);
+    margin-top:5px; line-height:1.45;
+  }
   .media-placeholder{
     width:100%; max-width:420px; height:220px;
     border:1px dashed #bbb; display:flex; align-items:center; justify-content:center;
@@ -248,6 +255,20 @@
         not accept, and read the robot's real status instead of guessing. Giving a model a body turns out to
         be mostly an exercise in making sure the only channel it learns through cannot lie to it.
       </p>
+      <div class="video-row">
+        <figure class="clip">
+          <video autoplay loop muted playsinline>
+            <source src="pupper-controller.mp4" type="video/mp4">
+          </video>
+          <figcaption>Teleoperated trot. The gamepad sets body velocity; everything below it, inverse kinematics through joint torques, runs on the robot.</figcaption>
+        </figure>
+        <figure class="clip">
+          <video controls preload="metadata" poster="pupper-voice-poster.jpg" playsinline>
+            <source src="pupper-voice.mp4" type="video/mp4">
+          </video>
+          <figcaption>Spoken commands through Gemini Live. Pupper answers, calls the matching tool, and reports back what the robot actually did. Sound on.</figcaption>
+        </figure>
+      </div>
     </div>
 
     <div class="entry">
